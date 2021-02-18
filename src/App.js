@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+
+//BootStrap
+import { Container, Row, Col } from 'react-bootstrap'
+
+//Components
+import Calendar from './Components/Calendar/Calendar';
+import InputPanel from './Components/InputPanel';
 import './App.css';
 
-function App() {
+
+import useForm from './Hooks/useForm'
+
+const App = () => {
+
+  const { handleChange, formData, setFormData } = useForm();
+
+
+
+
+  const loadData = (num) => {
+
+  }
+
+
+  const saveData = () => {
+
+  }
+
+
+  useEffect(() => {
+
+
+
+
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="h-100" fluid>
+      <Row className="h-100">
+        <InputPanel saveData={saveData} />
+        <Calendar loadData={loadData} />
+      </Row>
+    </Container>
   );
 }
 
