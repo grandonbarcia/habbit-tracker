@@ -14,8 +14,7 @@ import useForm from './Hooks/useForm'
 const App = () => {
 
   const { handleChange, formData, setFormData } = useForm();
-
-
+  const [update, forceUpdate] = useState(false);
 
 
   const loadData = (num) => {
@@ -38,8 +37,8 @@ const App = () => {
   return (
     <Container className="h-100" fluid>
       <Row className="h-100">
-        <InputPanel saveData={saveData} />
-        <Calendar loadData={loadData} />
+        <InputPanel saveData={saveData} forceUpdate={forceUpdate} update={update} />
+        <Calendar loadData={loadData} update={update} />
       </Row>
     </Container>
   );

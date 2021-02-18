@@ -8,7 +8,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 
 
 
-const CalendarPanel = ({ loadData }) => {
+const CalendarPanel = ({ loadData, update }) => {
 
     const [value, onChange] = useState(new Date());
     const [monthName, setMonthName] = useState('');
@@ -79,6 +79,12 @@ const CalendarPanel = ({ loadData }) => {
         createCalendar();
 
     }, [])
+
+    useEffect(() => {
+
+        createCalendar();
+
+    }, [update])
 
 
 

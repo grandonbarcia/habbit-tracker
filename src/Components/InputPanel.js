@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import useForm from '../Hooks/useForm'
 
-const InputPanel = ({ saveData }) => {
+const InputPanel = ({ saveData, forceUpdate, update }) => {
 
     const [todaysDate, setTodaysDate] = useState('');
 
@@ -14,7 +14,7 @@ const InputPanel = ({ saveData }) => {
         const today = new Date(timeElapsed);
         console.log(today.toDateString());
         localStorage.setItem(today.toDateString(), JSON.stringify(formData))
-
+        forceUpdate(!update)
 
     }
 
