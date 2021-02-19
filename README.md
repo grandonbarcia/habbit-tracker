@@ -24,6 +24,13 @@ npm start
 
 ## Screenshots 
 
+Users can move the slider, toggle the switches, and enter enter text in the input panel on the left.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+![](/public/img/HT1.PNG)
+
+
+When the user is done, they can hit the 'Done' button and icons will pop up in the calendar to indicate they have done the task.
+
+![](/public/img/HT2.PNG)
+
+
