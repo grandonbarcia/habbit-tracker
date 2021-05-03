@@ -13,9 +13,16 @@ body {
 	font-family: Tahoma;
 }
 
+.calendar .title__row{
+
+	margin-top: 15px;
+	margin-bottom: 15px;
 
 
-/* declare a 7 column grid on the table */
+}
+
+
+
 #calendar {
 	width: 100%;
   display: grid;
@@ -64,7 +71,7 @@ caption {
 }
 
 #calendar td {
-	min-height: 110px;
+	min-height: 130px;
   display: flex;
   flex-direction: column;
 }
