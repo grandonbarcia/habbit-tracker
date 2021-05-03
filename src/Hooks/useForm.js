@@ -1,21 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const useForm = (form) => {
 
 
     let [formData, setFormData] = useState({
-        meditate: null,
-        coffee: null,
-        excercise: null,
-        stretch: null,
+        meditate: false,
+        coffee: false,
+        excercise: false,
+        stretch: false,
         journal: ''
     })
+
+    useEffect(() => {
+
+        console.log(formData);
+
+
+    }, [formData])
 
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: value,
+            [name]: name === 'journal' ? value : !formData[name]
         })
     }
     return { handleChange, formData, setFormData };
