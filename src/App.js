@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 //Components
 import Calendar from './Components/Calendar/Calendar';
-import InputPanel from './Components/InputPanel';
+import InputPanel from './Components/InputPanel/InputPanel';
 import './App.css';
 
 
