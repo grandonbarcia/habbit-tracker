@@ -9,7 +9,16 @@ const lightBlue = '#bbf1fa';
 const purple = '#663f3f';
 const white = '#ffffff'
 
-const Days = ({ date, today, loadData }) => {
+const Days = ({ date, today, showHabitsDone }) => {
+
+    let dataFound = localStorage.getItem(date);
+    let data;
+    let meditate = false;
+    let stretch = false;
+    let excercise = false;
+    let coffee = false;
+
+
     const [bgColor, setBgColor] = useState(today ? darkBlue : lightBlue);
 
     const style = {
@@ -29,20 +38,14 @@ const Days = ({ date, today, loadData }) => {
 
     }
 
-    let dataFound = localStorage.getItem(date);
-    let data;
 
-    let meditate = false;
-    let stretch = false;
-    let excercise = false;
-    let coffee = false;
     if (dataFound) {
-        console.log(date)
+
         data = JSON.parse(dataFound);
-        meditate = data.meditate === 'on' ? true : false;
-        stretch = data.stretch === 'on' ? true : false;
-        excercise = data.excercise === 'on' ? true : false;
-        coffee = data.coffee === 'on' ? true : false;
+        meditate = data.meditate
+        stretch = data.stretch
+        excercise = data.excercise
+        coffee = data.coffee
 
     }
 
@@ -50,7 +53,7 @@ const Days = ({ date, today, loadData }) => {
 
 
     return (
-        <td className="day other-month" style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+        <td onClick={() => showHabitsDone(date)} className="day other-month" style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
             <div className="date">{date.split(' ')[2]}</div>
             <div>{meditate ? <GiMeditation /> : ''}</div>
             <div>{stretch ? <GrYoga /> : ''}</div>
