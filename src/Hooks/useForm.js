@@ -11,15 +11,9 @@ const useForm = (form) => {
         journal: ''
     })
 
-    useEffect(() => {
-
-        console.log(formData);
-
-
-    }, [formData])
-
     const handleChange = e => {
         const { name, value } = e.target;
+        console.log(name, value)
         setFormData({
             ...formData,
             [name]: name === 'journal' ? value : !formData[name]
