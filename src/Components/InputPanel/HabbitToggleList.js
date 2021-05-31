@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { Row, Col, Form, Button } from 'react-bootstrap'
-import useForm from '../../Hooks/useForm'
+import React from 'react'
+import { Row, Col, Form } from 'react-bootstrap'
 
-const HabbitToggleList = ({ handleChange, switchRef, toggleSwitch }) => {
+
+const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => {
+
     return (
         <div>
             <Row>
@@ -17,7 +18,8 @@ const HabbitToggleList = ({ handleChange, switchRef, toggleSwitch }) => {
                         label="Excercise 1hr"
                         name="excercise"
                         onChange={handleChange}
-                        ref={switchRef}
+                        checked={habitsTracked.excercise}
+                        onClick={() => setHabitsTracked({ ...habitsTracked, excercise: !habitsTracked.excercise })}
                     />
                 </Col>
                 <Col>
@@ -27,6 +29,8 @@ const HabbitToggleList = ({ handleChange, switchRef, toggleSwitch }) => {
                         label="Stretch 10 mins"
                         name="stretch"
                         onChange={handleChange}
+                        checked={habitsTracked.stretch}
+                        onClick={() => setHabitsTracked({ ...habitsTracked, stretch: !habitsTracked.stretch })}
                     />
                 </Col>
             </Row>
@@ -38,6 +42,8 @@ const HabbitToggleList = ({ handleChange, switchRef, toggleSwitch }) => {
                         label="Meditate 20 mins"
                         name="meditate"
                         onChange={handleChange}
+                        checked={habitsTracked.meditate}
+                        onClick={() => setHabitsTracked({ ...habitsTracked, meditate: !habitsTracked.meditate })}
                     />
                 </Col>
                 <Col>
@@ -47,6 +53,8 @@ const HabbitToggleList = ({ handleChange, switchRef, toggleSwitch }) => {
                         label="Drink Coffee"
                         name="coffee"
                         onChange={handleChange}
+                        checked={habitsTracked.coffee}
+                        onClick={() => setHabitsTracked({ ...habitsTracked, coffee: !habitsTracked.coffee })}
                     />
                 </Col>
             </Row>
