@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 //BootStrap
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
 //Components
 import Calendar from './Components/Calendar/Calendar';
 import InputPanel from './Components/InputPanel/InputPanel';
 import './App.css';
-import useForm from './Hooks/useForm'
 
 const initialState = { meditate: false, excercise: false, stretch: false, coffee: false, journal: '' }
 
@@ -39,7 +38,7 @@ const App = () => {
     forceUpdate(!update);
   }
 
-  const handleChange = e => {
+  const handleJournal = e => {
     const { value } = e.target
     setHabitsTracked((prev) => { return { ...prev, journal: value } })
   }
@@ -49,7 +48,7 @@ const App = () => {
       <Row className="h-100">
         <InputPanel
           handleClick={handleClick}
-          handleChange={handleChange}
+          handleJournal={handleJournal}
           displayDate={displayDate}
           habitsTracked={habitsTracked}
           setHabitsTracked={setHabitsTracked}

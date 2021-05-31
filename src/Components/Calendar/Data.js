@@ -1,4 +1,4 @@
-export default {
+const data = {
     "Jan": {
         "name": "January",
         "short": "Jan",
@@ -72,3 +72,5 @@ export default {
         "days": 31
     }
 }
+
+export default data

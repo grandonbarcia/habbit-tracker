@@ -6,7 +6,6 @@ import { AiOutlineCoffee } from 'react-icons/ai'
 
 const darkBlue = '#51c2d5';
 const lightBlue = '#bbf1fa';
-const purple = '#663f3f';
 const white = '#ffffff'
 
 const Days = ({ date, today, showHabitsDone }) => {
@@ -28,7 +27,6 @@ const Days = ({ date, today, showHabitsDone }) => {
     const handleMouseEnter = () => {
 
         setBgColor(white)
-
 
     }
 

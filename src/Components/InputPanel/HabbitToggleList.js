@@ -17,7 +17,7 @@ const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => 
                         id="Excercise"
                         label="Excercise 1hr"
                         name="excercise"
-                        onChange={handleChange}
+
                         checked={habitsTracked.excercise}
                         onClick={() => setHabitsTracked({ ...habitsTracked, excercise: !habitsTracked.excercise })}
                     />
@@ -28,7 +28,7 @@ const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => 
                         id="Stretch"
                         label="Stretch 10 mins"
                         name="stretch"
-                        onChange={handleChange}
+
                         checked={habitsTracked.stretch}
                         onClick={() => setHabitsTracked({ ...habitsTracked, stretch: !habitsTracked.stretch })}
                     />
@@ -41,7 +41,7 @@ const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => 
                         id="Meditate"
                         label="Meditate 20 mins"
                         name="meditate"
-                        onChange={handleChange}
+
                         checked={habitsTracked.meditate}
                         onClick={() => setHabitsTracked({ ...habitsTracked, meditate: !habitsTracked.meditate })}
                     />
@@ -52,7 +52,7 @@ const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => 
                         id="Coffee"
                         label="Drink Coffee"
                         name="coffee"
-                        onChange={handleChange}
+
                         checked={habitsTracked.coffee}
                         onClick={() => setHabitsTracked({ ...habitsTracked, coffee: !habitsTracked.coffee })}
                     />

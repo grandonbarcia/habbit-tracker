@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import HabbitToggleList from './HabbitToggleList';
 
-const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, setHabitsTracked, displayDate }) => {
+const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, handleJournal, setHabitsTracked, displayDate }) => {
 
     return (
         <Col className="h-100 shadow-lg" xl={3}>
@@ -28,13 +28,13 @@ const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, setHab
                             </Form>
                         </Col>
                     </Row> */}
-                    <HabbitToggleList handleChange={handleChange} habitsTracked={habitsTracked} setHabitsTracked={setHabitsTracked} />
+                    <HabbitToggleList habitsTracked={habitsTracked} setHabitsTracked={setHabitsTracked} />
                     <Row>
                         <Col>
                             <Form>
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Journal: </Form.Label>
-                                    <Form.Control as="textarea" rows={3} name="journal" onChange={handleChange} value={habitsTracked.journal} />
+                                    <Form.Control as="textarea" rows={3} name="journal" onChange={handleJournal} value={habitsTracked.journal} />
                                 </Form.Group>
                             </Form>
                         </Col>
