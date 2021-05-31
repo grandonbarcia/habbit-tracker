@@ -7,38 +7,57 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Calendar from './Components/Calendar/Calendar';
 import InputPanel from './Components/InputPanel/InputPanel';
 import './App.css';
-
-
 import useForm from './Hooks/useForm'
+
+const initialState = { meditate: false, excercise: false, stretch: false, coffee: false, journal: '' }
+
 
 const App = () => {
 
-  const { handleChange, formData, setFormData } = useForm();
   const [update, forceUpdate] = useState(false);
+  const [habitsTracked, setHabitsTracked] = useState(initialState)
+  const [displayDate, setDisplayDate] = useState(new Date().toDateString());
 
 
-  const loadData = (num) => {
+  const showHabitsDone = (date) => {
+
+    let dataFound = localStorage.getItem(date);
+    setDisplayDate(date);
+    if (dataFound) {
+      let data = JSON.parse(dataFound);
+      console.log(data);
+      setHabitsTracked(data);
+    } else {
+      setHabitsTracked(initialState);
+    }
+
 
   }
 
-
-  const saveData = () => {
-
+  const handleClick = () => {
+    localStorage.setItem(displayDate, JSON.stringify(habitsTracked))
+    forceUpdate(!update);
   }
 
-
-  useEffect(() => {
-
-
-
-
-  }, [])
+  const handleChange = e => {
+    const { value } = e.target
+    setHabitsTracked((prev) => { return { ...prev, journal: value } })
+  }
 
   return (
     <Container className="h-100" fluid>
       <Row className="h-100">
-        <InputPanel saveData={saveData} forceUpdate={forceUpdate} update={update} />
-        <Calendar loadData={loadData} update={update} />
+        <InputPanel
+          handleClick={handleClick}
+          handleChange={handleChange}
+          displayDate={displayDate}
+          habitsTracked={habitsTracked}
+          setHabitsTracked={setHabitsTracked}
+        />
+        <Calendar
+          update={update}
+          showHabitsDone={showHabitsDone}
+        />
       </Row>
     </Container>
   );
