@@ -10,32 +10,13 @@ const white = '#ffffff'
 
 const Days = ({ date, today, showHabitsDone }) => {
 
+
     let dataFound = localStorage.getItem(date);
     let data;
     let meditate = false;
     let stretch = false;
     let excercise = false;
     let coffee = false;
-
-
-    const [bgColor, setBgColor] = useState(today ? darkBlue : lightBlue);
-
-    const style = {
-        backgroundColor: bgColor
-    }
-
-    const handleMouseEnter = () => {
-
-        setBgColor(white)
-
-    }
-
-    const handleMouseLeave = () => {
-
-        setBgColor(today ? darkBlue : lightBlue);
-
-    }
-
 
     if (dataFound) {
 
@@ -48,15 +29,14 @@ const Days = ({ date, today, showHabitsDone }) => {
     }
 
 
-
-
     return (
-        <td onClick={() => showHabitsDone(date)} className="day other-month" style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+        <td onClick={() => showHabitsDone(date)} className="day other-month" style={{ backgroundColor: today ? darkBlue : lightBlue }}  >
             <div className="date">{date.split(' ')[2]}</div>
             <div>{meditate ? <GiMeditation /> : ''}</div>
             <div>{stretch ? <GrYoga /> : ''}</div>
             <div>{excercise ? <BiDumbbell /> : ''}</div>
             <div>{coffee ? <AiOutlineCoffee /> : ''}</div>
+
         </td>
     )
 }
