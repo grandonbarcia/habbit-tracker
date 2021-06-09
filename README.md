@@ -24,7 +24,7 @@ npm start
 
 ## Screenshots 
 
-Users can move the slider, toggle the switches, and enter enter text in the input panel on the left.
+Users can toggle the switches and enter text in the input panel on the left.
 
 ![](/public/img/HT1.JPG)
 
