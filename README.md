@@ -1,6 +1,6 @@
 # Habit-Tracker 
 
-This app tracks daily helps tracks my daily habits and journal entries on a calendar to show my daily habits throughout the month. 
+This app tracks my daily habits and journal entries. After submission, it displays an icon on on a calendar to let me know what habit I did that day. 
 
 ## Motivation
 
