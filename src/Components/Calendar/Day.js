@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { GiMeditation } from 'react-icons/gi'
 import { BiDumbbell } from 'react-icons/bi'
 import { GrYoga } from 'react-icons/gr'
@@ -6,7 +6,7 @@ import { AiOutlineCoffee } from 'react-icons/ai'
 
 const darkBlue = '#51c2d5';
 const lightBlue = '#bbf1fa';
-const white = '#ffffff'
+
 
 const Days = ({ date, today, showHabitsDone }) => {
 
