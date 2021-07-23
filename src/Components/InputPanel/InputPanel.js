@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form, Button, Card } from 'react-bootstrap'
 import HabbitToggleList from './HabbitToggleList';
 
 const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, handleJournal, setHabitsTracked, displayDate }) => {
@@ -28,20 +28,64 @@ const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, handle
                             </Form>
                         </Col>
                     </Row> */}
-                    <HabbitToggleList habitsTracked={habitsTracked} setHabitsTracked={setHabitsTracked} />
+
                     <Row>
                         <Col>
-                            <Form>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>Journal: </Form.Label>
-                                    <Form.Control as="textarea" rows={3} name="journal" onChange={handleJournal} value={habitsTracked.journal} />
-                                </Form.Group>
-                            </Form>
+
+                            <Card>
+                                <Card.Header>Did you......?</Card.Header>
+                                <Card.Body>
+
+                                    <HabbitToggleList habitsTracked={habitsTracked} setHabitsTracked={setHabitsTracked} />
+                                    <Row>
+                                        <Col>
+                                            <Form>
+                                                <Form.Group>
+                                                    <Form.Label>Journal: </Form.Label>
+                                                    <Form.Control as="textarea" rows={3} name="journal" onChange={handleJournal} value={habitsTracked.journal} />
+                                                </Form.Group>
+                                            </Form>
+                                        </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col className='text-right'>
+                                            <Button onClick={handleClick}>Done</Button>
+                                        </Col>
+                                    </Row>
+
+                                </Card.Body>
+                            </Card>
+
                         </Col>
                     </Row>
+
+
                     <Row>
                         <Col>
-                            <Button onClick={handleClick}>Done</Button>
+                            <Card>
+                                <Card.Header>How it Works: </Card.Header>
+                                <Card.Body>
+
+                                    <Card.Text>
+                                        1. Click on a date.
+                                    </Card.Text>
+
+                                    <Card.Text>
+                                        2. Toggle switches.
+                                    </Card.Text>
+                                    <Card.Text>
+                                        3. Add text.
+                                    </Card.Text>
+                                    <Card.Text>
+                                        4. Hit Done.
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Symbols will appear on the calendar corresponding to the date set at the top.
+                                    </Card.Text>
+
+                                </Card.Body>
+                            </Card>
                         </Col>
                     </Row>
                 </Col>
