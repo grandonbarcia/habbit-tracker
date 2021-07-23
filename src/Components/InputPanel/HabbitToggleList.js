@@ -6,11 +6,7 @@ const HabbitToggleList = ({ handleChange, habitsTracked, setHabitsTracked }) => 
 
     return (
         <div>
-            <Row>
-                <Col>
-                    Did you......?
-                </Col>
-            </Row>
+
             <Row>
                 <Col>
                     <Form.Switch
