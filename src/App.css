@@ -56,7 +56,7 @@ caption {
 }
 
 #calendar .weekdays {
-	background: #ec4646;  
+	
 }
 
 
@@ -66,33 +66,18 @@ caption {
 	line-height: 20px;
 	border: none !important;
 	padding: 10px 6px;
-	color: #fff;
 	font-size: 13px;
 }
 
 #calendar td {
-	min-height: 130px;
+ 	min-height: 150px;
   display: flex;
   flex-direction: column;
 }
 
-#calendar .days li:hover {
-	background: #d3d3d3;
-}
 
 
-#calendar .event {
-  flex: 0 0 auto;
-	font-size: 13px;
-	border-radius: 4px;
-	padding: 5px;
-	margin-bottom: 5px;
-	line-height: 14px;
-	background: #e4f2f2;
-	border: 1px solid #b5dbdc;
-	color: #009aaf;
-	text-decoration: none;
-}
+
 
 #calendar .event-desc {
 	color: #666;
@@ -110,7 +95,7 @@ caption {
    ============================*/
 
 
-@media(max-width: 768px) {
+/* @media(max-width: 768px) {
 
 	#calendar .weekdays, #calendar .other-month {
 		display: none;
@@ -135,4 +120,4 @@ caption {
 	#calendar .date {
 		align-self: flex-start;
 	}
-}
+} */
