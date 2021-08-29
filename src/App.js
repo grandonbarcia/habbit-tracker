@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 //BootStrap
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row } from "react-bootstrap";
 
 //Components
-import Calendar from './Components/Calendar/Calendar';
-import InputPanel from './Components/InputPanel/InputPanel';
-import './App.css';
+import Calendar from "./Components/Calendar/Calendar";
+import InputPanel from "./Components/InputPanel/InputPanel";
+import InputModal from "./Components/InputModal/InputModal";
+import "./App.css";
 
-const initialState = { meditate: false, excercise: false, stretch: false, coffee: false, journal: '' }
-
+const initialState = {
+  meditate: false,
+  excercise: false,
+  stretch: false,
+  coffee: false,
+  journal: "",
+};
 
 const App = () => {
-
   const [update, forceUpdate] = useState(false);
-  const [habitsTracked, setHabitsTracked] = useState(initialState)
+  const [habitsTracked, setHabitsTracked] = useState(initialState);
   const [displayDate, setDisplayDate] = useState(new Date().toDateString());
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const showHabitsDone = (date) => {
-
     let dataFound = localStorage.getItem(date);
     setDisplayDate(date);
     if (dataFound) {
@@ -29,37 +37,42 @@ const App = () => {
     } else {
       setHabitsTracked(initialState);
     }
-
-
-  }
+  };
 
   const handleClick = () => {
-    localStorage.setItem(displayDate, JSON.stringify(habitsTracked))
+    localStorage.setItem(displayDate, JSON.stringify(habitsTracked));
+    setShow(false);
     forceUpdate(!update);
-  }
+  };
 
-  const handleJournal = e => {
-    const { value } = e.target
-    setHabitsTracked((prev) => { return { ...prev, journal: value } })
-  }
+  const handleJournal = (e) => {
+    const { value } = e.target;
+    setHabitsTracked((prev) => {
+      return { ...prev, journal: value };
+    });
+  };
 
   return (
     <Container className="h-100" fluid>
       <Row className="h-100">
-        <InputPanel
-          handleClick={handleClick}
-          handleJournal={handleJournal}
-          displayDate={displayDate}
-          habitsTracked={habitsTracked}
-          setHabitsTracked={setHabitsTracked}
-        />
+        <InputPanel />
         <Calendar
           update={update}
           showHabitsDone={showHabitsDone}
+          handleShow={handleShow}
+        />
+        <InputModal
+          show={show}
+          handleClick={handleClick}
+          handleClose={handleClose}
+          handleJournal={handleJournal}
+          habitsTracked={habitsTracked}
+          setHabitsTracked={setHabitsTracked}
+          displayDate={displayDate}
         />
       </Row>
     </Container>
   );
-}
+};
 
 export default App;
