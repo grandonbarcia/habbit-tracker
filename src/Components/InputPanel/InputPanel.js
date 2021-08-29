@@ -1,24 +1,31 @@
-import React from 'react'
-import { Row, Col, Form, Button, Card } from 'react-bootstrap'
-import HabbitToggleList from './HabbitToggleList';
+import React from "react";
+import { Row, Col, Form, Button, Card } from "react-bootstrap";
+import HabbitToggleList from "./HabbitToggleList";
 
-const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, handleJournal, setHabitsTracked, displayDate }) => {
-
-    return (
-        <Col className="h-100 shadow-lg" xl={3}>
-            <Row className="text-center">
-                <Col>
-                    <h1> Habbit Tracker </h1>
-                </Col>
-            </Row>
-            <Row className="text-center">
-                <Col>
-                    <h3>{displayDate}</h3>
-                </Col>
-            </Row>
-            <Row>
-                <Col className="Form__col">
-                    {/* <Row>
+const InputPanel = ({
+  saveData,
+  handleClick,
+  habitsTracked,
+  handleChange,
+  handleJournal,
+  setHabitsTracked,
+  displayDate,
+}) => {
+  return (
+    <Col className="h-100 shadow-lg" xl={3}>
+      <Row className="text-center">
+        <Col>
+          <h1> Habbit Tracker </h1>
+        </Col>
+      </Row>
+      <Row className="text-center">
+        <Col>
+          <h3>{displayDate}</h3>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="Form__col">
+          {/* <Row>
                         <Col>
                             <Form>
                                 <Form.Group controlId="formBasicRange">
@@ -29,70 +36,28 @@ const InputPanel = ({ saveData, handleClick, habitsTracked, handleChange, handle
                         </Col>
                     </Row> */}
 
-                    <Row>
-                        <Col>
+          <Row>
+            <Col>
+              <Card>
+                <Card.Header>How it Works: </Card.Header>
+                <Card.Body>
+                  <Card.Text>1. Click on a date.</Card.Text>
 
-                            <Card>
-                                <Card.Header>Did you......?</Card.Header>
-                                <Card.Body>
-
-                                    <HabbitToggleList habitsTracked={habitsTracked} setHabitsTracked={setHabitsTracked} />
-                                    <Row>
-                                        <Col>
-                                            <Form>
-                                                <Form.Group>
-                                                    <Form.Label>Journal: </Form.Label>
-                                                    <Form.Control as="textarea" rows={3} name="journal" onChange={handleJournal} value={habitsTracked.journal} />
-                                                </Form.Group>
-                                            </Form>
-                                        </Col>
-                                    </Row>
-
-                                    <Row>
-                                        <Col className='text-right'>
-                                            <Button onClick={handleClick}>Done</Button>
-                                        </Col>
-                                    </Row>
-
-                                </Card.Body>
-                            </Card>
-
-                        </Col>
-                    </Row>
-
-
-                    <Row>
-                        <Col>
-                            <Card>
-                                <Card.Header>How it Works: </Card.Header>
-                                <Card.Body>
-
-                                    <Card.Text>
-                                        1. Click on a date.
-                                    </Card.Text>
-
-                                    <Card.Text>
-                                        2. Toggle switches.
-                                    </Card.Text>
-                                    <Card.Text>
-                                        3. Add text.
-                                    </Card.Text>
-                                    <Card.Text>
-                                        4. Hit Done.
-                                    </Card.Text>
-                                    <Card.Text>
-                                        Symbols will appear on the calendar corresponding to the date set at the top.
-                                    </Card.Text>
-
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+                  <Card.Text>2. Toggle switches.</Card.Text>
+                  <Card.Text>3. Add text.</Card.Text>
+                  <Card.Text>4. Hit Done.</Card.Text>
+                  <Card.Text>
+                    Symbols will appear on the calendar corresponding to the
+                    date set at the top.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Col>
+      </Row>
+    </Col>
+  );
+};
 
-    )
-}
-
-export default InputPanel
+export default InputPanel;
