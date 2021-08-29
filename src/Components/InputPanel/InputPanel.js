@@ -25,17 +25,6 @@ const InputPanel = ({
       </Row>
       <Row>
         <Col className="Form__col">
-          {/* <Row>
-                        <Col>
-                            <Form>
-                                <Form.Group controlId="formBasicRange">
-                                    <Form.Label>When you woke up, how did you feel?  </Form.Label>
-                                    <Form.Control type="range" name='happy' onChange={handleChange} />
-                                </Form.Group>
-                            </Form>
-                        </Col>
-                    </Row> */}
-
           <Row>
             <Col>
               <Card>
