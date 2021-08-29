@@ -5,7 +5,7 @@ import { Container, Row } from "react-bootstrap";
 
 //Components
 import Calendar from "./Components/Calendar/Calendar";
-import InputPanel from "./Components/InputPanel/InputPanel";
+import SideBar from "./Components/SideBar/SideBar";
 import InputModal from "./Components/InputModal/InputModal";
 import "./App.css";
 
@@ -55,7 +55,7 @@ const App = () => {
   return (
     <Container className="h-100" fluid>
       <Row className="h-100">
-        <InputPanel />
+        <SideBar />
         <Calendar
           update={update}
           showHabitsDone={showHabitsDone}
