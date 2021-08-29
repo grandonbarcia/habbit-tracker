@@ -24,7 +24,7 @@ const InputModal = ({
           habitsTracked={habitsTracked}
           setHabitsTracked={setHabitsTracked}
         />
-        <Button>+ Add New Habit</Button>
+
         <Journal handleJournal={handleJournal} habitsTracked={habitsTracked} />
       </Modal.Body>
       <Modal.Footer>
